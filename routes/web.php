@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Users;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +25,7 @@ Route::get('/about', function () {
 });
 
 Route::view('contact', 'contact');
+
+Route::get('users/{user}', [Users::class, 'index']);
+
+Route::get('sie', [Users::class, 'sie']);
