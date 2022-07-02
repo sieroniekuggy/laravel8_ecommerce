@@ -17,10 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('user/{name}', function($name){
-    return view('users', [
-        'name'=> $name
-    ]);
-});
+// Route::get('about', function(){
+//     return view('about');
+// });
 
-Route::get('users/{name}',[UsersController::class, 'loadView']);
+// Route::get('users/{name}',[UsersController::class, 'loadView']);
+Route::view('users','users');
+Route::view('about', 'about');
