@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Users;
-use App\Models\User;
-
+use App\Http\Controllers\UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,16 +14,13 @@ use App\Models\User;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
-    return redirect('about');
+    return view('welcome');
 });
 
-Route::get('/about', function () {
-    return view('about');
+Route::get('user/{name}', function($name){
+    return view('users', [
+        'name'=> $name
+    ]);
 });
 
-Route::view('contact', 'contact');
-
-Route::get('users/{user}', [Users::class, 'index']);
-
-Route::get('sie', [Users::class, 'sie']);
+Route::get('users/{name}',[UsersController::class, 'loadView']);
