@@ -7,9 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Homepage</h1>
+    <h1>contact page</h1>
 
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
+    <a href="/">Go back to Homepage</a>
 </body>
 </html>
