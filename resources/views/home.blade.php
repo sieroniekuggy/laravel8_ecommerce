@@ -1,3 +1,3 @@
 <x-header data="Hello from about component" />
 
-<h3>test about page</h3>
+<h3>home page</h3>

@@ -23,5 +23,5 @@ Route::get('/', function () {
 
 Route::post('users',[UsersController::class, 'getData']);
 Route::view('login', 'users');
-// Route::view('users','users');
-// Route::view('about', 'about');
+Route::view('home','home');
+Route::view('noaccess', 'noaccess');
