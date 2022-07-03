@@ -26,5 +26,5 @@ Route::group(['middleware'=>['protectedPage']], function(){
     Route::view('login', 'users');
 });
 
-Route::view('home','home');
+Route::view('home','home')->middleware('protectedPage');
 Route::view('noaccess', 'noaccess');
