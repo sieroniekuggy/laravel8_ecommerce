@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 /*
@@ -21,10 +22,13 @@ Route::get('/', function () {
 //     return view('about');
 // });
 
-Route::group(['middleware'=>['protectedPage']], function(){
-    Route::post('users',[UsersController::class, 'getData']);
-    Route::view('login', 'users');
-});
+// Route::group(['middleware'=>['protectedPage']], function(){
+//     Route::post('users',[UsersController::class, 'getData']);
+//     Route::view('login', 'users');
+// });
 
+Route::get('users', [UsersController::class, 'getData']);
 Route::view('home','home')->middleware('protectedPage');
 Route::view('noaccess', 'noaccess');
+
+Route::get('/posts', [PostController::class, 'getAllPosts'])->name('post.getallpost');

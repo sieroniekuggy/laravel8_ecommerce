@@ -8,7 +8,7 @@
     @endforeach
 @endif --}}
 
-<form action="users" method="POST">
+{{-- <form action="users" method="POST">
     @csrf
     <input type="text" name="username" placeholder="Enter username" id=""> <br>
     <span style="color: red">@error('username')
@@ -21,4 +21,4 @@
     @enderror</span>
     <br>
     <button type="submit">Login</button>
-</form>
+</form> --}}
