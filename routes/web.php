@@ -3,6 +3,7 @@
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\PostsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,7 +29,6 @@ Route::get('/', function () {
 // });
 
 Route::get('users', [UsersController::class, 'getData']);
+Route::get('posts', [PostController::class, 'getAllPosts']);
 Route::view('home','home')->middleware('protectedPage');
 Route::view('noaccess', 'noaccess');
-
-Route::get('/posts', [PostController::class, 'getAllPosts'])->name('post.getallpost');
