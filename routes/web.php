@@ -1,9 +1,7 @@
 <?php
 
-use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UsersController;
-use App\Http\Controllers\PostsController;
+use App\Http\Controllers\UserAuth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,16 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('about', function(){
-//     return view('about');
-// });
+Route::post('user', [UserAuth::class, 'userLogin']);
+Route::view('login', 'login');
+Route::view('profile', 'profile');
 
-// Route::group(['middleware'=>['protectedPage']], function(){
-//     Route::post('users',[UsersController::class, 'getData']);
-//     Route::view('login', 'users');
-// });
-
-Route::get('users', [UsersController::class, 'getData']);
-Route::get('posts', [PostController::class, 'getAllPosts']);
-Route::view('home','home')->middleware('protectedPage');
-Route::view('noaccess', 'noaccess');
+Route::get('/logout', function () {
+    if(session()->has('user'))
+    {
+        session()->pull('user');
+    }
+    return redirect('login');
+});
