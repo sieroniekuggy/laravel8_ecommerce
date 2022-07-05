@@ -24,3 +24,13 @@
         <td><Address></Address></td>
     </tr> --}}
 </table>
+
+<span>
+    {{$members->links()}}
+</span>
+
+<style>
+    .w-5{
+        display: none;
+    }
+</style>

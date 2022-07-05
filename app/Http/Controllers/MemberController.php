@@ -9,7 +9,7 @@ class MemberController extends Controller
 {
     function show()
     {
-        $data = Member::all();
+        $data = Member::paginate(1);
         return view('list', ['members'=>$data]);
     }
 }
