@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UploadController;
+use App\Http\Controllers\MemberController;
 use Illuminate\Support\Facades\App;
 
 /*
@@ -19,8 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/profile/{lang}', function($lang){
-    App::setLocale($lang);
-    return view('profile');
-});
+Route::get('list', [MemberController::class, 'show']);
+// Route::view('list', 'list');
 
