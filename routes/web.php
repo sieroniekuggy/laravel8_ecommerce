@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UploadController;
+use Illuminate\Support\Facades\App;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('upload', 'upload');
-Route::post('upload', [UploadController::class, 'index']);
+Route::get('/profile/{lang}', function($lang){
+    App::setLocale($lang);
+    return view('profile');
+});
 
