@@ -3,10 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Member;
 
 class MemberController extends Controller
 {
+    function dbOperations()
+    {
+        return DB::table('members')->get();
+    }
+
     function addData(Request $req)
     {
         $member =  new Member;
