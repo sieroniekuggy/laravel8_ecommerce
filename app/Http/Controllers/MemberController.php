@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Member;
 use Illuminate\Http\Request;
+use App\Models\Member;
 
 class MemberController extends Controller
 {
-    function show()
+    function addData(Request $req)
     {
-        $data = Member::paginate(1);
-        return view('list', ['members'=>$data]);
+        $member =  new Member;
+        $member->name = $req->name;
+        $member->email = $req->email;
+        $member->address = $req->address;
+        $member->save();
+        return redirect('add');
     }
 }

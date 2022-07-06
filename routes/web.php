@@ -19,6 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('list', [MemberController::class, 'show']);
-// Route::view('list', 'list');
+Route::view('add', 'addmember');
+Route::post('add', [MemberController::class, 'addData']);
+
 
