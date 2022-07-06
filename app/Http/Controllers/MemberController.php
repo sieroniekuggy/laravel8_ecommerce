@@ -16,4 +16,18 @@ class MemberController extends Controller
         $member->save();
         return redirect('add');
     }
+
+    function list()
+    {
+        $data = Member::all();
+        return view('list', ['members'=>$data]);
+    }
+
+    function delete($id)
+    {
+        $data = Member::find($id);
+        $data->delete();
+        return redirect('list');
+
+    }
 }

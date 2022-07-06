@@ -22,4 +22,7 @@ Route::get('/', function () {
 Route::view('add', 'addmember');
 Route::post('add', [MemberController::class, 'addData']);
 
+Route::get('list', [MemberController::class, 'list']);
+Route::get('delete/{id}', [MemberController::class, 'delete']);
+
 
