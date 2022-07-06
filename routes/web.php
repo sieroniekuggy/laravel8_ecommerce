@@ -27,4 +27,5 @@ Route::get('delete/{id}', [MemberController::class, 'delete']);
 Route::get('edit/{id}', [MemberController::class, 'showData']);
 Route::post('edit', [MemberController::class, 'update']);
 
+Route::get('db', [MemberController::class, 'dbOperations']);
 
