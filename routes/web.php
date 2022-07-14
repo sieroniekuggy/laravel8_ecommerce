@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProductController;
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\App;
 
 /*
@@ -30,10 +31,11 @@ Route::view('/about', 'about');
 Route::view('add', 'addmember');
 Route::post('add', [MemberController::class, 'addData']);
 
-Route::get('list', [MemberController::class, 'list']);
-Route::get('delete/{id}', [MemberController::class, 'delete']);
-Route::get('edit/{id}', [MemberController::class, 'showData']);
-Route::post('edit', [MemberController::class, 'update']);
-
-Route::get('db', [MemberController::class, 'dbOperations']);
+Route::controller(MemberController::class)->group(function(){
+    Route::get('list', 'list');
+    Route::get('delete/{id}','delete');
+    Route::get('edit/{id}','showData');
+    Route::post('edit','update');
+    Route::get('db','dbOperations');
+});
 
