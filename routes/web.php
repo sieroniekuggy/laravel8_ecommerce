@@ -28,14 +28,13 @@ Route::get('/home', function(){
 Route::get('/product', [ProductController::class, 'productList']);
 Route::view('/about', 'about');
 
-Route::view('add', 'addmember');
-Route::post('add', [MemberController::class, 'addData']);
-
 Route::controller(MemberController::class)->group(function(){
     Route::get('list', 'list');
     Route::get('delete/{id}','delete');
     Route::get('edit/{id}','showData');
     Route::post('edit','update');
     Route::get('db','dbOperations');
+    Route::view('add', 'addmember');
+    Route::post('add','addData');
 });
 
