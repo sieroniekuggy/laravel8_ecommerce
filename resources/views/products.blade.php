@@ -7,17 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Homepage</h1>
-
-    <a href="/home">Home</a>
-    <a href="/about">About</a>
-    <a href="/">Go to Main</a>
-
-    <br>
-    <br>
-
-    {{URL::current()}} <br>
-    {{URL::previous()}}
 
 </body>
 </html>

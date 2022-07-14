@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\App;
 
 /*
@@ -18,6 +19,13 @@ use Illuminate\Support\Facades\App;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', function(){
+    return view('home');
+});
+
+Route::get('/product', [ProductController::class, 'productList']);
+Route::view('/about', 'about');
 
 Route::view('add', 'addmember');
 Route::post('add', [MemberController::class, 'addData']);

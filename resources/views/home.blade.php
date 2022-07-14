@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Homepage</h1>
+    <h1>Home page</h1>
 
     <a href="/home">Home</a>
     <a href="/about">About</a>
